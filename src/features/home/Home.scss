@@ -1,0 +1,43 @@
+.images{
+  position:absolute;
+}
+.active{
+  opacity: 1;
+}
+.disactive{
+  opacity: 0;
+}
+.loading{
+  position:absolute;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  transition: all ease 0.3s;
+  z-index: 3;
+  .pikachu-running{
+    @extend .images;
+    width: 15em;
+    height: 10em;
+    z-index: 2;
+    top:35%;
+    left:50%;
+    transform: translate(-9em, -5.5em)
+  }
+  .background-loading{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: greenyellow;
+    z-index: 0;
+  }
+  .loading-leyenda{
+    position:absolute;
+    width: 40em;
+    height: 40em;
+    z-index: 1;
+    top:50%;
+    left: 50%;
+    transform: translate(-20em, -15em);
+  }
+}

@@ -1,0 +1,259 @@
+@import "../../app/styles/colors.scss";
+.images{
+  position: absolute;
+}
+
+.pokemons{
+  @extend .images;
+  width: 10em;
+  height: 10em;
+  bottom: 5%;
+  z-index: 0;
+  transition: all ease 0.3s;
+}
+.texto{
+  position: absolute;
+  margin: 0;
+  font-size: 1.9em;
+  transition: all ease 0.4s;
+  z-index: 1;
+  color: white;
+  text-shadow: 0 2px 5px black;
+  bottom: 5%;
+  font-family: 'Roboto Mono', monospace;
+}
+.bg-landing{
+  height: 100vh;
+  width: 100vw;
+  background-color: greenyellow;
+  position: absolute;
+  opacity: 0.9;
+}
+.landingpage{
+  box-sizing: border-box;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color_1;
+  overflow: hidden;
+  transition: ease all 1s;
+}
+.move{
+  transform: translate(-100%, 0);
+}
+.cambiar-bg-color{
+  background-color: greenyellow;
+  opacity: 0.9;
+}
+.bulbasaur{
+  cursor: default;
+  .imagen-bulbasaur{
+    @extend .pokemons;
+    left:20%;
+  }
+  .imagen-mega-bulbasaur{
+    @extend .pokemons;
+    width: 17em;
+    height: 17em;
+    left: 17%;
+    bottom: 0%;
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  .texto-bulbasaur{
+    @extend .texto;
+    left:20%;
+  }
+  .texto-mega-bulbasaur{
+    @extend .texto;
+    left:20%;
+    opacity: 0;
+  }
+  &:hover .texto-bulbasaur{
+    bottom: 25%;
+    opacity: 0;
+  }
+  &:hover .texto-mega-bulbasaur{
+    bottom: 25%;
+    opacity: 1;
+    transform: translate(-20%,0);
+  }
+  &:hover .imagen-mega-bulbasaur{
+    transform: scale(1);
+    opacity: 1;
+  }
+  &:hover .imagen-bulbasaur{
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+.pikachu{
+  cursor: default;
+  .imagen-pikachu{
+    @extend .pokemons;
+    left: 35%;
+  }
+  .imagen-raichu{
+    @extend .pokemons;
+    left:35%;
+    opacity: 0;
+    transform: scale(1.5)
+  }
+  .texto-pikachu{
+    @extend .texto;
+    left: 35%;
+  }
+  .texto-raichu{
+    @extend .texto;
+    left: 35%;
+    opacity: 0;
+  }
+  &:hover .texto-pikachu{
+    opacity: 0;
+    bottom: 25%;
+  }
+  &:hover .texto-raichu{
+    opacity: 1;
+    bottom: 25%;
+    transform: translate(15%,0);
+  }
+  &:hover .imagen-raichu{
+    opacity: 1;
+    transform: scale(1);
+  }
+  &:hover .imagen-pikachu{
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+.squirtle{
+  cursor: default;
+  .imagen-squirtle{
+    @extend .pokemons;
+    right: 20%;
+  }
+  .imagen-blastoise{
+    @extend .pokemons;
+    right: 20%;
+    opacity: 0;
+    transform: scale(1.5)
+  }
+  .texto-squirtle{
+    @extend .texto;
+    right: 21%;
+  }
+  .texto-blastoise{
+    @extend .texto;
+    right: 21%;
+    opacity: 0;
+  }
+  &:hover .texto-squirtle{
+    bottom: 25%;
+    opacity: 0;
+  }
+  &:hover .texto-blastoise{
+    bottom: 25%;
+    opacity: 1;
+    transform: translate(5%,0);
+  }
+  &:hover .imagen-blastoise{
+    transform: scale(1);
+    opacity: 1;
+  }
+  &:hover .imagen-squirtle{
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+.charmander{
+  cursor: default;
+  .imagen-charmander{
+    @extend .pokemons;
+    right: 35%;
+  }
+  .imagen-charizard{
+    @extend .pokemons;
+    right: 35%;
+    width: 13em;
+    height: 13em;
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  .texto-charmander{
+    @extend .texto;
+    right: 35%;
+  }
+  .texto-charizard{
+    @extend .texto;
+    right: 35%;
+    opacity: 0;
+  }
+  &:hover .texto-charmander{
+    bottom: 25%;
+    opacity: 0;
+  }
+  &:hover .texto-charizard{
+    bottom: 25%;
+    opacity: 1;
+    transform: translate(-15%,0);
+  }
+  &:hover .imagen-charizard{
+    transform: scale(1);
+    opacity: 1;
+  }
+  &:hover .imagen-charmander{
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+.ash{
+  .imagen-ash{
+    @extend .images;
+    width: 20em;
+    height: 20em;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8;
+    transition: all ease 0.5s;
+  }
+  .imagen-ash-lanzando{
+    @extend .images;
+    width: 20em;
+    height: 25em;
+    right: 0;
+    bottom: 0;
+    transform: translate(0%, 20%);
+    opacity: 0;
+    transition: all ease 0.5s;
+  }
+  &:hover .imagen-ash{
+    opacity: 0;
+  }
+  &:hover .imagen-ash-lanzando{
+    opacity: 0.8;
+  }
+}
+.pokemon{
+  @extend .images;
+  width: 35em;
+  height: 14em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-17.5em, -14em)
+}
+.pokeball{
+  @extend .images;
+  width: 10em;
+  height: 10em;
+  top:50%;
+  left:50%;
+  transform: rotate(180deg);
+  transition: all ease 0.5s;
+  opacity: 0.4;
+  cursor: pointer;
+}
+.pokeball:hover{
+  transform: scale(1.3) translate(-3.7em, 0);
+  opacity: 1;
+}
+
