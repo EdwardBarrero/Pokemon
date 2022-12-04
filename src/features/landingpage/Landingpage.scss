@@ -1,4 +1,4 @@
-@import "../../app/styles/colors.scss";
+@import "../../app/constants/styles/colors.scss";
 .images{
   position: absolute;
 }
@@ -25,9 +25,9 @@
 .bg-landing{
   height: 100vh;
   width: 100vw;
-  background-color: greenyellow;
+  background-color: #C42A2A;
   position: absolute;
-  opacity: 0.9;
+  opacity: 1;
 }
 .landingpage{
   box-sizing: border-box;
@@ -42,8 +42,8 @@
   transform: translate(-100%, 0);
 }
 .cambiar-bg-color{
-  background-color: greenyellow;
-  opacity: 0.9;
+  background-color: #C42A2A;
+  opacity: 1;
 }
 .bulbasaur{
   cursor: default;
@@ -239,7 +239,11 @@
   height: 14em;
   left: 50%;
   top: 50%;
-  transform: translate(-17.5em, -14em)
+  transform: translate(-17.5em, -14em);
+  transition: all ease 0.5s;
+  &:hover{
+    transform: translate(-17.5em, -14em) scale(1.2);
+  }
 }
 .pokeball{
   @extend .images;

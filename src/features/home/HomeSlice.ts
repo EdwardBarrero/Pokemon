@@ -22,11 +22,14 @@ export const HomeSlice = createSlice({
       if(state.pokemons.length < 20){
         state.pokemons = [...state.pokemons, action.payload]
       } 
+    },
+    clearPokemonsData: (state) => {
+      state.pokemons = [];
     }
   }
 })
 
-export const { getPokemonsNames, getPokemonsData } = HomeSlice.actions;
+export const { getPokemonsNames, getPokemonsData, clearPokemonsData } = HomeSlice.actions;
 
 export const selectPokemonsNames = (state: RootState) => state.pokemons.pokemonNames;
 export const selectPokemons = (state: RootState) => state.pokemons.pokemons;

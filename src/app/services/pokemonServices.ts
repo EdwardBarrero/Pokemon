@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { store } from '../store';
-import { getPokemonsNames, getPokemonsData } from "../../features/home/HomeSlice";
+import { getPokemonsNames, getPokemonsData, clearPokemonsData } from "../../features/home/HomeSlice";
 
-export function getAllPokemons(offset:number){
+export function getAllPokemonsPerPage(offset:number){
   let data:[]=[];
+  store.dispatch(clearPokemonsData())
   axios.get(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`)
   .then(response => {
     data = response.data.results.map((pokemon:any)=>{

@@ -24,7 +24,7 @@ export default function Landingpage() {
   }
   return (
     <>
-    <div className="bg-landing"></div>
+    {/* <div className="bg-landing"></div> */}
     <div className={`landingpage ${action}`}>
       <div className="bulbasaur">
         <img className='imagen-bulbasaur' src={bulbasor} />
