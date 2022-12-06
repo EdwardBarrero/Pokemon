@@ -2,6 +2,9 @@
   position: absolute;
   left: calc(10% - 4.5em);
   top: 5%;
+  .actived-light-bulbs{
+    display: block !important;
+  }
   .light-bulbs-border-disactive{
     position: absolute;
     width: 9em;

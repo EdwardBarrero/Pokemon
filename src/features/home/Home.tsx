@@ -24,7 +24,8 @@ export default function Home() {
   const [orderActived, setOrderActived] = useState('');
   const [order, setOrder] = useState('');
   const [pokemon, setPokemon] = useState('');
-  const [displayDetail, setDisplayDetail] = useState('')
+  const [displayDetail, setDisplayDetail] = useState('');
+  const [lightStatus, setLightStatus] = useState('');
   const pokemons = useAppSelector(selectPokemons);
   const data = [...pokemons];
   let offset = (pageNumber*20)-20;
@@ -65,6 +66,7 @@ export default function Home() {
 
   function pokemonSelectedHandle(id: string){
     setDisplayDetail('display-detail');
+    setLightStatus('actived-light-bulbs');
     setPokemon(id);
   }
     
@@ -75,13 +77,13 @@ export default function Home() {
         <FilterTypes filterActived={filterActived} setFilterActived={setFilterActived} />
         <OrderPokemons orderActived={orderActived} setOrder={setOrder} order={order} />
         <div className="control-btns">
-          <LightBulbs />
+          <LightBulbs status={lightStatus}/>
           <DirectionArrow />
           <ActionButtons orderActived={orderActived} setOrderActived={setOrderActived} filterActived={filterActived} setFilterActived={setFilterActived} />
           <PaginationButtons pageNumber={pageNumber} setPageNumber={setPageNumber}/>
         </div>
         <div className={`pokemon-detail ${displayDetail}`}>
-          <PokemonDetail setDisplayDetail={setDisplayDetail}/>
+          <PokemonDetail setDisplayDetail={setDisplayDetail} setLightStatus={setLightStatus} setPokemon={setPokemon}/>
         </div>
         <div className={`pokemon-cards`}>
         {

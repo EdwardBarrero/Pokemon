@@ -3,11 +3,13 @@ import { TYPES, STATS, UTILITIES } from "../../constants/constants";
 import { DICTIONARY } from "../../constants/dictionary";
 import { clearPokemonReducer } from "../../services/pokemonServices";
 import "./PokemonDetail.scss";
-export default function PokemonDetail({setDisplayDetail}) {
+export default function PokemonDetail({setDisplayDetail, setLightStatus, setPokemon}) {
   const pokemon = useAppSelector(state => state.pokemons.pokemon);
   function goBackHandle(){
     clearPokemonReducer();
     setDisplayDetail('');
+    setLightStatus('');
+    setPokemon('');
   }
   return (
     <>
