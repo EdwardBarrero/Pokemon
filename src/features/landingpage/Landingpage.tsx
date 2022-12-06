@@ -30,7 +30,7 @@ export default function Landingpage() {
         <img className='imagen-bulbasaur' src={bulbasor} />
         <img className='imagen-mega-bulbasaur' src={megaBulbasaur} />
         <p className={`texto-bulbasaur`}>BULBASUAR</p>
-        <p className={`texto-mega-bulbasaur`}>MEGA BULBASAUR</p>
+        <p className={`texto-mega-bulbasaur`}>VENUSAUR</p>
       </div>
       <div className="pikachu">
         <img className='imagen-pikachu' src={pikachu} />

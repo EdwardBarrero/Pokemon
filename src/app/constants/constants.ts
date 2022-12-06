@@ -20,6 +20,9 @@ export const TYPES = {
   psychic: require("../../assets/psychic-type.png"),
   ice: require("../../assets/ice-type.png"),
 };
+export const UTILITIES = {
+  backArrow: require('../../assets/arrow.png'),
+};
 
 export const STATS = {
   hp: require('../../assets/health-points-icon.png'),

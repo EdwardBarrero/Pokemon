@@ -9,6 +9,21 @@
   display: none;
   opacity: 0;
 }
+.display-detail{
+  z-index: 6 !important;
+}
+.screen{
+  height: 75%;
+  width: 60%;
+  left: 20%;
+  top: calc(50% - 37.5%);
+  border-radius: 10px;
+  background-color: rgb(233, 233, 218);
+  border: 1px solid black;
+  box-shadow: inset 0px 0px 8px black, 0 0 60px white;
+  scrollbar-width: thin;
+  scrollbar-color: gray lightgray;
+}
 .container-home{
   transition: all ease 0.5s;
   .homepage{
@@ -16,25 +31,21 @@
     background-color: #C42A2A;
     box-shadow: inset 0 0 25px black;
     .pokemon-cards{
+      @extend .screen;
       display: flex;
       justify-content: center;
       position: relative;
       flex-wrap: wrap;
-      height: 75%;
-      width: 60%;
-      left: 20%;
-      top: calc(50% - 37.5%);
       overflow-y: auto;
       overflow-x: hidden;
-      border-radius: 10px;
-      background-color: rgb(233, 233, 218);
-      border: 1px solid black;
-      box-shadow: inset 0px 0px 8px black, 0 0 60px white;
-      scrollbar-width: thin;
-      scrollbar-color: gray lightgray;
       .pokemon-card-home{
         margin: 2em 0em 1em 0em;
       }
+    }
+    .pokemon-detail{
+      @extend .screen;
+      position: absolute;
+      z-index: 0;
     }
     .pokemon-cards::-webkit-scrollbar{
       width: 10px;

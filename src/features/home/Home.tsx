@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAppSelector } from "../../app/hooks";
-import { getAllPokemonsPerPage } from "../../app/services/pokemonServices";
+import { getAllPokemonsPerPage, orderPokemonsBy, getPokemon } from "../../app/services/pokemonServices";
 import { selectPokemons } from "./HomeSlice";
 
 import PokemonCard from "../../app/components/PokemonCard/PokemonCard";
@@ -10,6 +10,7 @@ import Loading from "../../app/components/Loading/Loading";
 import LightBulbs from "../../app/components/LightBulbs/LightBulbs";
 import DirectionArrow from "../../app/components/DirectionArrow/DirectionArrow";
 import FilterTypes from "../../app/components/FilterTypes/FilterTypes";
+import PokemonDetail from "../../app/components/PokemonDetail/PokemonDetail";
 
 import "./Home.scss";
 import OrderPokemons from "../../app/components/OrderPokemons/OrderPokemons";
@@ -22,30 +23,37 @@ export default function Home() {
   const [filterActived, setFilterActived] = useState('');
   const [orderActived, setOrderActived] = useState('');
   const [order, setOrder] = useState('');
+  const [pokemon, setPokemon] = useState('');
+  const [displayDetail, setDisplayDetail] = useState('')
   const pokemons = useAppSelector(selectPokemons);
-  let offset = (pageNumber*20)-20
+  const data = [...pokemons];
+  let offset = (pageNumber*20)-20;
   
   useEffect(() => {
     animationHome();
   }, [])
   useEffect(() =>{
     getAllPokemonsPerPage(offset);
+    setOrder('');
   },[pageNumber])
   useEffect(() => {
     setDataStatus('active');
     setDataStatusTwo('disactiveTwo');
     loading();
   },[pokemons])
-  useEffect(() => {
-    orderPokemonsHandle();
-  },[order])
+  useEffect(()=>{
+    let data = [...pokemons]
+    orderPokemonsBy(data, order);
+  }, [order]);
+  useEffect(()=>{
+    getPokemon(pokemon);
+  }, [pokemon]);
 
   function animationHome() {
     setTimeout(() => {
       setAnimationState('off-animation-home')
     }, 500)
   }
-
   function loading () {
     setTimeout(() => {
       if(Object.keys(pokemons).length != 0){
@@ -54,21 +62,10 @@ export default function Home() {
       } 
     }, 2000);
   };
-  function orderPokemonsHandle(){
-    // switch (order){
-    //   case 'az':
-    //     var pokemonsToShow = pokemons.sort((a, b) => {
-    //       if(a.name > b.name) { 
-    //         return 1
-    //       }
-    //       if(a.name < b.name) {
-    //         return -1
-    //       }
-    //       return 0
-    //     })
-    //   break;
-      
-    // }
+
+  function pokemonSelectedHandle(id: string){
+    setDisplayDetail('display-detail');
+    setPokemon(id);
   }
     
   return (
@@ -83,15 +80,18 @@ export default function Home() {
           <ActionButtons orderActived={orderActived} setOrderActived={setOrderActived} filterActived={filterActived} setFilterActived={setFilterActived} />
           <PaginationButtons pageNumber={pageNumber} setPageNumber={setPageNumber}/>
         </div>
-          <div className={`pokemon-cards`}>
-          {
-            pokemons.map((pokemon) => (
-              <div className={`pokemon-card-home ${dataStatusTwo}`}>
-                <PokemonCard data={pokemon} />
-              </div>
-            ))
-          }
-          </div>
+        <div className={`pokemon-detail ${displayDetail}`}>
+          <PokemonDetail setDisplayDetail={setDisplayDetail}/>
+        </div>
+        <div className={`pokemon-cards`}>
+        {
+          data.map((pokemon) => (
+            <div onClick={()=>pokemonSelectedHandle(pokemon.id)} className={`pokemon-card-home ${dataStatusTwo}`}>
+              <PokemonCard data={pokemon} />
+            </div>
+          ))
+        }
+        </div>
       </div>
     </div>
   )
