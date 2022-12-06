@@ -1,0 +1,44 @@
+.light-bulbs{
+  position: absolute;
+  left: calc(10% - 4.5em);
+  top: 5%;
+  .light-bulbs-border-disactive{
+    position: absolute;
+    width: 9em;
+    height: 9em;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid ;
+    box-shadow: inset 0.2em 0.2em 0.7em black;
+  }
+  .light-bulbs-disactive{
+    margin: 0.5em 0 0 0.5em;
+    border: 1px solid;
+    position: absolute;
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    background-color: #07CFD8;
+    box-shadow: inset 1em 1em 4em black, inset -0.5em -0.5em 0.6em white;
+  }
+  .light-bulbs-border-active{
+    position: absolute;
+    width: 9em;
+    height: 9em;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid ;
+    display: none;
+  }
+  .light-bulbs-active{
+    margin: 0.5em 0 0 0.5em;
+    border: 1px solid;
+    position: absolute;
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    background-color: #07CFD8;
+    box-shadow: 0 0 5em #07CFD8, 0 0 10em white;
+    display: none;
+  }
+}

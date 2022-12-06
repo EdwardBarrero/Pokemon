@@ -1,14 +1,6 @@
 .images{
   position:absolute;
 }
-.active{
-  opacity: 1;
-  display: block;
-}
-.disactive{
-  opacity: 0;
-  display: none;
-}
 .activeTwo{
   display: block;
   opacity: 1;
@@ -19,44 +11,6 @@
 }
 .container-home{
   transition: all ease 0.5s;
-  .loading{
-    position:absolute;
-    box-sizing: border-box;
-    height: 75vh;
-    width: 60vw;
-    overflow: hidden;
-    transition: all ease 0.3s;
-    z-index: 3;
-    left: 19%;
-    top: 15%;
-    .pikachu-running{
-      @extend .images;
-      width: 15em;
-      height: 10em;
-      z-index: 2;
-      top:35%;
-      left:50%;
-      transform: translate(-9em, -5.5em)
-    }
-    // .background-loading{
-    //   position: absolute;
-    //   width: 100vw;
-    //   height: 100vh;
-    //   background-color: greenyellow;
-    //   z-index: 0;
-    // }
-    .loading-leyenda{
-      position:absolute;
-      width: 40em;
-      height: 40em;
-      z-index: 1;
-      top:50%;
-      left: 50%;
-      transform: translate(-20em, -15em);
-    }
-  }
-  
-  
   .homepage{
     height: 100vh;
     background-color: #C42A2A;
@@ -68,16 +22,16 @@
       flex-wrap: wrap;
       height: 75%;
       width: 60%;
-      left: 19%;
-      top: 20%;
+      left: 20%;
+      top: calc(50% - 37.5%);
       overflow-y: auto;
       overflow-x: hidden;
       border-radius: 10px;
       background-color: rgb(233, 233, 218);
       border: 1px solid black;
       box-shadow: inset 0px 0px 8px black, 0 0 60px white;
-      // scrollbar-width: thin;
-      // scrollbar-color: gray lightgray;
+      scrollbar-width: thin;
+      scrollbar-color: gray lightgray;
       .pokemon-card-home{
         margin: 2em 0em 1em 0em;
       }
@@ -92,209 +46,6 @@
       background-color: lightgray;
       border-radius: 10px;
       border: 1px black solid;
-    }
-    .control-btns{
-      .light-bulbs{
-        position: absolute;
-        left: 6%;
-        top: 6%;
-        .light-bulbs-border-disactive{
-          position: absolute;
-          width: 9em;
-          height: 9em;
-          border-radius: 50%;
-          background-color: white;
-          border: 2px solid ;
-          box-shadow: inset 0.2em 0.2em 0.7em black;
-        }
-        .light-bulbs-disactive{
-          margin: 0.5em 0 0 0.5em;
-          border: 1px solid;
-          position: absolute;
-          width: 8em;
-          height: 8em;
-          border-radius: 50%;
-          background-color: #07CFD8;
-          box-shadow: inset 1em 1em 4em black, inset -0.5em -0.5em 0.6em white;
-        }
-        .light-bulbs-border-active{
-          position: absolute;
-          width: 9em;
-          height: 9em;
-          border-radius: 50%;
-          background-color: white;
-          border: 2px solid ;
-          display: none;
-        }
-        .light-bulbs-active{
-          margin: 0.5em 0 0 0.5em;
-          border: 1px solid;
-          position: absolute;
-          width: 8em;
-          height: 8em;
-          border-radius: 50%;
-          background-color: #07CFD8;
-          box-shadow: 0 0 5em #07CFD8, 0 0 10em white;
-          display: none;
-  
-        }
-      }
-      .direction-arrow{
-        position: absolute;
-        left: 3%;
-        top: 45%;
-        .direction-arrow-background{
-          position: absolute;
-          width: 12em;
-          height: 12em;
-          background-color: gray;
-          border-radius: 50%;
-          box-shadow: inset -0.2em 0 1em black;
-          border: 1px solid;
-        }
-        .direction-arrow-btn{
-          .direction-arrow-btn-x{
-            position: absolute;
-            margin: 4.5em 1.5em;
-            width: 9em;
-            height: 3em;
-            background-color: lightgray;
-            box-shadow: -5px 0 10px black;
-            border: 1px solid;
-            transition: all ease 0.3s;
-            cursor: pointer;
-          }
-          .direction-arrow-btn-y{
-            position: absolute;
-            width: 3em;
-            height: 9em;
-            margin: 1.5em 4.5em;
-            border: 1px solid;
-            background-color: lightgray;
-            box-shadow: -5px 0 10px black;
-            transition: all ease 0.3s;
-            cursor: pointer;
-          }
-          .direction-arrow-btn-x-cover{
-            position: absolute;
-            margin: 4.6em 1.6em;
-            width: 8.9em;
-            height: 2.9em;
-            background-color: lightgray;
-            transition: all ease 0.3s;
-            cursor: pointer;
-          }
-          &:hover .direction-arrow-btn-x{
-            transform: scale(1.1);
-          }
-          &:hover .direction-arrow-btn-y{
-            transform: scale(1.1);
-          }
-          &:hover .direction-arrow-btn-x-cover{
-            transform: scale(1.1);
-          }
-        }
-      }
-      .pagination-btns{
-        position: absolute;
-        right: 3.5%;
-        bottom: 15%;
-        .prev-btn{
-          width: 8em;
-          height: 1em;
-          border-radius: 1.5em;
-          margin: 0 1em 0 0;
-          background-color:  #AE1919;
-          cursor: pointer;
-          box-shadow: 8px 0 8px black, inset 1px 0 1.5px white;
-          transition: all ease 0.3s;
-          &:hover{
-            transform: scale(1.2);
-          }
-        }
-        .prev-btn-text{
-          position: absolute;
-          left: 1.4em;
-          top: 1em;
-          z-index: 5;
-          font-family: 'Roboto Mono', monospace;
-          font-size: 1.4em;
-        }
-        .next-btn{
-          width: 8em;
-          height: 1em;
-          border-radius: 1.5em;
-          background-color: #235E70;
-          cursor: pointer;
-          box-shadow: 8px 0 8px black, inset 1px 0 1.5px white;
-          transition: all ease 0.3s;
-          &:hover{
-            transform: scale(1.2);
-          }
-        }
-        .next-btn-text{
-          position: absolute;
-          left: 6.7em;
-          top: 1em;
-          z-index: 5;
-          font-family: 'Roboto Mono', monospace;
-          font-size: 1.4em;
-        }
-      }
-      .action-btn{
-        position: absolute;
-        right: 4%;
-        top: 45%;
-        .action-btn-background{
-          width: 12em;
-          height: 12em;
-          background-color: gray;
-          border-radius: 50%;
-          border: 1px solid;
-          box-shadow: inset 3px 0 1em black;
-        }
-        .action-btn-btns{
-          .action-btn-a{
-            text-align: center;
-            width: 4em;
-            height: 4em;
-            border-radius: 50%;
-            background-color: green;
-            position: absolute;
-            top: 2.5em;
-            left: 2em;
-            color: white;
-            border: 1px solid black;
-            box-shadow: 4px 0 4px black, inset 1px 0 2px white;
-            cursor: pointer;
-            transition: all ease 0.3s;
-            font-family: 'Roboto Mono', monospace;
-            &:hover{
-              transform: scale(1.1);
-            }
-          }
-          .action-btn-b{
-            text-align: center;
-            width: 4em;
-            height: 4em;
-            border-radius: 50%;
-            background-color: blue;
-            position:absolute;
-            top: 6em;
-            left: 6em;
-            color: white;
-            border: 1px solid black;
-            box-shadow: 0 0 10px black;
-            box-shadow: 4px 0 4px black, inset 1px 0 2px white;
-            cursor: pointer;
-            transition: all ease 0.3s;
-            font-family: 'Roboto Mono', monospace;
-            &:hover{
-              transform: scale(1.1);
-            }
-          }
-        }
-      }
     }
   }
 }

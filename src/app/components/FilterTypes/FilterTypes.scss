@@ -1,0 +1,83 @@
+.filter-modal-actived{
+  opacity: 1 !important;
+  z-index: 5 !important;
+}
+
+.filter-modal{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30em;
+  height: 39em;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px black;
+  left: calc(50% - 15em);
+  top: calc(50% - 20em);
+  font-family: 'Roboto Mono', monospace;
+  z-index: -1;
+  transition: opacity ease 0.5s;
+  opacity: 0;
+  .filter-modal-title{
+    font-size: 1.3em;
+    margin: 20px 0 15px 0;
+  }
+  .filter-modal-content{
+    display: grid;
+    grid-template-columns: repeat(4, 6.5em);
+    grid-template-rows: repeat(5, 6em);
+    .filter-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+      border-radius: 5px;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      margin: 5px;
+      transition: all ease 0.3s;
+      cursor: pointer;
+      .filter-item-icon{
+        width: 2em;
+        height: 2em;
+      }
+      .filter-item-text{
+        text-align: center;
+        margin: 0;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .actived-filter-item{
+      @extend .filter-item;
+      background-color: palegoldenrod;
+      transform: scale(1.03);
+      box-shadow: 0 0 10px black;
+    }
+  }
+  .filter-modal-footer{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 25px;
+    .filter-modal-btn{
+      width: 150px;
+      height: 30px;
+      color: white;
+      font-family: 'Roboto Mono', monospace;
+      cursor: pointer;
+    }
+    .filter-modal-trigger{
+      @extend .filter-modal-btn;
+      background-color: darkcyan;
+    }
+    .filter-modal-cancel{
+      @extend .filter-modal-btn;
+      background-color: grey;
+    }
+  }
+}

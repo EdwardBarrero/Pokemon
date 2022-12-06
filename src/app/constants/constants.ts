@@ -19,5 +19,11 @@ export const TYPES = {
   electric: require("../../assets/electric-type.png"),
   psychic: require("../../assets/psychic-type.png"),
   ice: require("../../assets/ice-type.png"),
+};
+
+export const STATS = {
+  hp: require('../../assets/health-points-icon.png'),
+  attack: require('../../assets/attack-icon.png'),
+  defense: require('../../assets/defense-icon.png'),
 }
 

@@ -1,0 +1,78 @@
+.action-btn{
+    position: absolute;
+    left: calc(90% - 6em);
+    top: calc(50% - 6em);
+    .action-btn-background{
+      width: 12em;
+      height: 12em;
+      background-color: gray;
+      border-radius: 50%;
+      border: 1px solid;
+      box-shadow: inset 3px 0 1em black;
+    }
+    .action-btn-btns{
+      .action-btn-a{
+        text-align: center;
+        width: 4em;
+        height: 4em;
+        border-radius: 50%;
+        background-color: green;
+        position: absolute;
+        top: 2.5em;
+        left: 2em;
+        color: white;
+        border: 1px solid black;
+        box-shadow: 4px 0 4px black, inset 1px 0 2px white;
+        cursor: pointer;
+        transition: all ease 0.3s;
+        font-family: 'Roboto Mono', monospace;
+        .action-btn-a-text{
+          position: absolute;
+          top: 35%;
+          left: -3%;
+          font-size: 1em;
+          transition: all ease 0.3s;
+          opacity: 0;
+        }
+        &:hover{
+          transform: scale(1.1);
+        }
+        &:hover .action-btn-a-text{
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .action-btn-b{
+        text-align: center;
+        width: 4em;
+        height: 4em;
+        border-radius: 50%;
+        background-color: blue;
+        position:absolute;
+        top: 6em;
+        left: 6em;
+        color: white;
+        border: 1px solid black;
+        box-shadow: 0 0 10px black;
+        box-shadow: 4px 0 4px black, inset 1px 0 2px white;
+        cursor: pointer;
+        transition: all ease 0.3s;
+        font-family: 'Roboto Mono', monospace;
+        .action-btn-b-text{
+          top: 35%;
+          left: -3%;
+          position: absolute;
+          font-size: 1em;
+          transition: all ease 0.3s;
+          opacity: 0;
+        }
+        &:hover{
+          transform: scale(1.1);
+        }
+        &:hover .action-btn-b-text{
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    }
+  }

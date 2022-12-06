@@ -1,4 +1,4 @@
-import { TYPES } from "../../constants/constants";
+import { TYPES, STATS } from "../../constants/constants";
 import { DICTIONARY } from "../../constants/dictionary";
 
 import "./PokemonCard.scss";
@@ -7,7 +7,23 @@ export default function PokemonCard({data = {name: '',  sprites: {front_default:
   
   return (
     <div className="pokemon-card">
-      <div className="pokemon-name">{data.name.toUpperCase()}</div>
+      <div className="pokemon-info">
+        <p className="pokemon-info-name">{data.name.toUpperCase()}</p>
+        <div className="pokemon-info-stats">
+          <div className="pokemon-info-stat-hp">
+            <img className='stat-hp-icon' src={STATS.hp} alt="" />
+            <p className="stat-hp-number">{data['stats'][0].base_stat}</p>
+          </div>
+          <div className="pokemon-info-stat-attack">
+            <img className="stat-attack-icon" src={STATS.attack} alt="" />
+            <p className="stat-attack-number">{data['stats'][1].base_stat}</p>
+          </div>
+          <div className="pokemon-info-stat-defense">
+            <img className="stat-defense-icon" src={STATS.defense} alt="" />
+            <p className="stat-defense-number">{data['stats'][2].base_stat}</p>
+          </div>
+        </div>
+      </div>
       <img className="pokemon-image" src={data.sprites.front_default} alt="" />
       <div className="pokemon-types">
       {

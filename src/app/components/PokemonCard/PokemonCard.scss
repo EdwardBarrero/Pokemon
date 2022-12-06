@@ -1,3 +1,17 @@
+.stat-icon{
+  width: 30px;
+  height: 30px;
+}
+.stat-number{
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.pokemon-info-stat{
+  display: flex;
+  align-items: center;
+  margin: 0 10px 0 0;
+}
 .pokemon-card{
   position: relative;
   box-sizing: border-box;
@@ -7,17 +21,49 @@
   align-items: end;
   z-index: 3;
   cursor: pointer;
-  .pokemon-name{
+  .pokemon-info{
     position: absolute;
-    font-size: 1.7em;
-    margin: 0;
-    left: 5.5em;
-    top: 50%;
-    z-index: 1;
+    top: 2em;
+    left: 8em;
     opacity: 0;
     transition: all ease 0.5s;
-    overflow: hidden;
-    font-family: 'Roboto Mono', monospace;
+    z-index: 1;
+    .pokemon-info-name{
+      font-size: 1.7em;
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Roboto Mono', monospace;
+    }
+    .pokemon-info-stats{
+      display: flex;
+      .pokemon-info-stat-hp{
+        @extend .pokemon-info-stat;
+        .stat-hp-icon{
+          @extend .stat-icon;
+        }
+        .stat-hp-number{
+          @extend .stat-number;
+        }
+      }
+      .pokemon-info-stat-attack{
+        @extend .pokemon-info-stat;
+        .stat-attack-icon{
+          @extend .stat-icon;
+        }
+        .stat-attack-number{
+          @extend .stat-number;
+        }
+      }
+      .pokemon-info-stat-defense{
+        @extend .pokemon-info-stat;
+        .stat-defense-icon{
+          @extend .stat-icon;
+        }
+        .stat-defense-number{
+          @extend .stat-number;
+        }
+      }
+    }
   }
   .pokemon-image{
     image-rendering: pixelated;
@@ -50,7 +96,7 @@
       }
     }
   }
-  &:hover .pokemon-name{
+  &:hover .pokemon-info{
     opacity: 1;
     transform: translate(25%, 0);
     width: auto;

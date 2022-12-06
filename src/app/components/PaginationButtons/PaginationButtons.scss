@@ -1,0 +1,46 @@
+.pagination-btns{
+  position: absolute;
+  left: calc(50% - 8.5em);
+  bottom: 3em;
+  .prev-btn{
+    width: 8em;
+    height: 1em;
+    border-radius: 1.5em;
+    margin: 0 1em 0 0;
+    background-color:  #AE1919;
+    cursor: pointer;
+    box-shadow: 0 4px 8px black, inset 0 1px 1.5px white;
+    transition: all ease 0.3s;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+  .prev-btn-text{
+    position: absolute;
+    left: calc(25% - 1.3em);
+    top: 1em;
+    z-index: 4;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.4em;
+  }
+  .next-btn{
+    width: 8em;
+    height: 1em;
+    border-radius: 1.5em;
+    background-color: #235E70;
+    cursor: pointer;
+    box-shadow:  0 4px 8px black, inset 0 1px 1.5px white;
+    transition: all ease 0.3s;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+  .next-btn-text{
+    position: absolute;
+    left: calc(75% - 1em);
+    top: 1em;
+    z-index: 4;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.4em;
+  }
+}

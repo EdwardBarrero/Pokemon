@@ -1,0 +1,52 @@
+.order-btns{
+  width: 4em;
+  height: 2em;
+  border-radius: 5px;
+  border: 1px solid;
+  margin: auto 5px;
+  cursor: pointer;
+  background-color: white;
+  transition: all ease 0.5s;
+}
+.order-btn-on{
+  @extend .order-btns;
+  background-color: lightgray;
+  transform: scale(1.2);
+  box-shadow: 0 0 5px black;
+}
+.order-modal-actived{
+  opacity: 1 !important;
+  top: calc(80% - 3em) !important;
+  left: calc(90% - 6em) !important;
+}
+.order-modal{
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  left: calc(90% - 6em);
+  bottom: 100%;
+  z-index: 5;
+  width: 12em;
+  height: 6em;
+  background-color: red;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0 0 10px black;
+  transition: all ease 0.5s;
+  opacity: 0;
+  .order-modal-btn-az{
+    @extend .order-btns;
+  }
+  .order-modal-btn-za{
+    @extend .order-btns;
+  }
+  .order-modal-btn-hp{
+    @extend .order-btns;
+  }
+  .order-modal-btn-atk{
+    @extend .order-btns;
+  }
+  .order-modal-btn-def{
+    @extend .order-btns;
+  }
+}

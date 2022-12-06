@@ -1,0 +1,38 @@
+.active{
+  opacity: 1;
+  display: block;
+}
+.disactive{
+  opacity: 0;
+  display: none;
+}
+.images{
+  position:absolute;
+}
+.loading{
+  position:absolute;
+  box-sizing: border-box;
+  height: 75vh;
+  width: 60vw;
+  overflow: hidden;
+  transition: all ease 0.3s;
+  z-index: 3;
+  left: 19%;
+  top: 15%;
+  .pikachu-running{
+    @extend .images;
+    width: 8em;
+    height: 6em;
+    z-index: 2;
+    bottom: 5%;
+    right: 0;
+  }
+  .loading-leyenda{
+    position:absolute;
+    width: 20em;
+    height: 20em;
+    z-index: 1;
+    top:calc(50% - 10em);
+    left: calc(50% - 10em);
+  }
+}
