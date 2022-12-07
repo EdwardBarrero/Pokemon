@@ -10,7 +10,7 @@ function App() {
     <div>
       <Routes>
         <Route path='/' element={<Landingpage />} />
-        <Route path='/home' element={<Home />} />
+        <Route path='/pokedex' element={<Home />} />
       </Routes>
     </div>
   );

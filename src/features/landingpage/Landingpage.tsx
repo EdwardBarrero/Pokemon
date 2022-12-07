@@ -19,7 +19,7 @@ export default function Landingpage() {
   function routingHandle() {
     setAction('move cambiar-bg-color');
     setTimeout(() => {
-      window.location.href = '/home';
+      window.location.href = '/pokedex';
     }, 1000)
   }
   return (
