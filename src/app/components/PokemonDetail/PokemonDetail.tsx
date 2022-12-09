@@ -21,7 +21,7 @@ export default function PokemonDetail({setDisplayDetail, setLightStatus, setPoke
       <div className="pokemon-detail-types">
         {
           pokemon['types'].map((type:any) => (
-            <div className="li-pokemon-type">
+            <div key={type.type.name} className="li-pokemon-type">
               <img className="pokemon-type-icon" src={TYPES[type.type.name]} alt="" />
               <p className="pokemon-type-text" >{DICTIONARY[type.type.name].toUpperCase()}</p>
             </div>

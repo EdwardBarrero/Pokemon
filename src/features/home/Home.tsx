@@ -47,7 +47,7 @@ export default function Home() {
     orderPokemonsBy(data, order);
   }, [order]);
   useEffect(()=>{
-    getPokemon(pokemon);
+    if(pokemon != '') getPokemon(pokemon);
   }, [pokemon]);
 
   function animationHome() {
@@ -88,7 +88,7 @@ export default function Home() {
         <div className={`pokemon-cards`}>
         {
           data.map((pokemon) => (
-            <div onClick={()=>pokemonSelectedHandle(pokemon.id)} className={`pokemon-card-home ${dataStatusTwo}`}>
+            <div key={pokemon.id} onClick={()=>pokemonSelectedHandle(pokemon.id)} className={`pokemon-card-home ${dataStatusTwo}`}>
               <PokemonCard data={pokemon} />
             </div>
           ))
