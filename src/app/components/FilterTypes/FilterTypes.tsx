@@ -16,7 +16,7 @@ export default function FilterTypes({filterActived, setFilterActived}) {
   const pokemonTypes  = useAppSelector(state => state.pokemons.pokemonTypes);
 
   function addFilterItemHandle (name : string){
-    filter != name ? setFilter(name) : setFilter('');
+    filter !== name ? setFilter(name) : setFilter('');
   }
 
   function filterPokemonsHandle(){

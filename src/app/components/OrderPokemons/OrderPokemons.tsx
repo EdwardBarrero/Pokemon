@@ -5,11 +5,11 @@ export default function OrderPokemons({orderActived, setOrder, order}) {
   }  
   return (
     <div className={`order-modal ${orderActived}`}>
-      <button onClick={()=>selectOrderHandle('az')} className={order != 'az' ? "order-modal-btn-az" : 'order-btn-on'}>A - Z</button>
-      <button onClick={()=>selectOrderHandle('za')} className={order != 'za' ? "order-modal-btn-za" : 'order-btn-on'}>Z - A</button>
-      <button onClick={()=>selectOrderHandle('hp')} className={order != 'hp' ? "order-modal-btn-hp" : 'order-btn-on'}>HP</button>
-      <button onClick={()=>selectOrderHandle('atk')} className={order != 'atk' ? "order-modal-btn-atk" : 'order-btn-on'}>ATQ</button>
-      <button onClick={()=>selectOrderHandle('def')} className={order != 'def' ? "order-modal-btn-def" : 'order-btn-on'}>DEF</button>
+      <button onClick={()=>selectOrderHandle('az')} className={order !== 'az' ? "order-modal-btn-az" : 'order-btn-on'}>A - Z</button>
+      <button onClick={()=>selectOrderHandle('za')} className={order !== 'za' ? "order-modal-btn-za" : 'order-btn-on'}>Z - A</button>
+      <button onClick={()=>selectOrderHandle('hp')} className={order !== 'hp' ? "order-modal-btn-hp" : 'order-btn-on'}>HP</button>
+      <button onClick={()=>selectOrderHandle('atk')} className={order !== 'atk' ? "order-modal-btn-atk" : 'order-btn-on'}>ATQ</button>
+      <button onClick={()=>selectOrderHandle('def')} className={order !== 'def' ? "order-modal-btn-def" : 'order-btn-on'}>DEF</button>
     </div>
   )
 }

@@ -27,35 +27,35 @@ export default function Landingpage() {
     {/* <div className="bg-landing"></div> */}
     <div className={`landingpage ${action}`}>
       <div className="bulbasaur">
-        <img className='imagen-bulbasaur' src={bulbasor} />
-        <img className='imagen-mega-bulbasaur' src={megaBulbasaur} />
+        <img className='imagen-bulbasaur' src={bulbasor}  alt='img not found'/>
+        <img className='imagen-mega-bulbasaur' src={megaBulbasaur} alt='img not found'/>
         <p className={`texto-bulbasaur`}>BULBASUAR</p>
         <p className={`texto-mega-bulbasaur`}>VENUSAUR</p>
       </div>
       <div className="pikachu">
-        <img className='imagen-pikachu' src={pikachu} />
-        <img className='imagen-raichu' src={raichu} />
+        <img className='imagen-pikachu' src={pikachu} alt='img not found'/>
+        <img className='imagen-raichu' src={raichu} alt='img not found'/>
         <p className="texto-pikachu">PIKACHU</p>
         <p className="texto-raichu">RAICHU</p>
       </div>
       <div className="squirtle">
-        <img className='imagen-squirtle' src={squertle} />
-        <img className='imagen-blastoise' src={blastoise} />
+        <img className='imagen-squirtle' src={squertle} alt='img not found'/>
+        <img className='imagen-blastoise' src={blastoise} alt='img not found'/>
         <p className="texto-squirtle">SQUIRTLE</p>
         <p className="texto-blastoise">BLASTOISE</p>
       </div>
       <div className="charmander">
-        <img className='imagen-charmander' src={charmander} />
-        <img className='imagen-charizard' src={charizard} />
+        <img className='imagen-charmander' src={charmander} alt='img not found'/>
+        <img className='imagen-charizard' src={charizard} alt='img not found'/>
         <p className="texto-charmander">CHARMANDER</p>
         <p className="texto-charizard">CHARIZARD</p>
       </div>
       <div className="ash">
-        <img className='imagen-ash' src={ash} />
-        <img className='imagen-ash-lanzando' src={ashLazando} />        
+        <img className='imagen-ash' src={ash} alt='img not found'/>
+        <img className='imagen-ash-lanzando' src={ashLazando} alt='img not found'/>        
       </div>
-      <img onClick={routingHandle} className="pokeball" src={pokeball}/>  
-      <img className='pokemon' src={pokemon} />
+      <img onClick={routingHandle} className="pokeball" src={pokeball} alt='img not found'/>  
+      <img className='pokemon' src={pokemon} alt='img not found'/>
     </div>
     </>
   )

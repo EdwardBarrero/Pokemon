@@ -5,7 +5,7 @@ export default function ActionButtons({setFilterActived, filterActived, orderAct
     filterActived !== '' ? setFilterActived('') : setFilterActived('filter-modal-actived');
   }
   function setOrderStatusHandle(){
-    orderActived != '' ? setOrderActived('') : setOrderActived('order-modal-actived');
+    orderActived !== '' ? setOrderActived('') : setOrderActived('order-modal-actived');
   }
   
   return (

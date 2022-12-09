@@ -28,16 +28,24 @@ export default function Home() {
   const [lightStatus, setLightStatus] = useState('');
   const pokemons = useAppSelector(selectPokemons);
   const data = [...pokemons];
-  let offset = (pageNumber*20)-20;
   
   useEffect(() => {
     animationHome();
   }, [])
   useEffect(() =>{
+    let offset = (pageNumber*20)-20;
     getAllPokemonsPerPage(offset);
     setOrder('');
   },[pageNumber])
   useEffect(() => {
+    function loading () {
+      setTimeout(() => {
+        if(Object.keys(pokemons).length !== 0){
+          setDataStatus('disactive');
+          setDataStatusTwo('activeTwo');
+        } 
+      }, 2000);
+    };
     setDataStatus('active');
     setDataStatusTwo('disactiveTwo');
     loading();
@@ -45,9 +53,9 @@ export default function Home() {
   useEffect(()=>{
     let data = [...pokemons]
     orderPokemonsBy(data, order);
-  }, [order]);
+  }, [order, pokemons]);
   useEffect(()=>{
-    if(pokemon != '') getPokemon(pokemon);
+    if(pokemon !== '') getPokemon(pokemon);
   }, [pokemon]);
 
   function animationHome() {
@@ -55,14 +63,6 @@ export default function Home() {
       setAnimationState('off-animation-home')
     }, 500)
   }
-  function loading () {
-    setTimeout(() => {
-      if(Object.keys(pokemons).length != 0){
-        setDataStatus('disactive');
-        setDataStatusTwo('activeTwo');
-      } 
-    }, 2000);
-  };
 
   function pokemonSelectedHandle(id: string){
     setDisplayDetail('display-detail');
