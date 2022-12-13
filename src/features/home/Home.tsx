@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAppSelector } from "../../app/hooks";
-import { getAllPokemonsPerPage, orderPokemonsBy, getPokemon } from "../../app/services/pokemonServices";
+import { getAllPokemonsPerPage, getPokemon } from "../../app/services/pokemonServices";
 import { selectPokemons } from "./HomeSlice";
 
 import PokemonCard from "../../app/components/PokemonCard/PokemonCard";
@@ -22,7 +22,7 @@ export default function Home() {
   const [animationState, setAnimationState] = useState('on-animation-home');
   const [filterActived, setFilterActived] = useState('');
   const [orderActived, setOrderActived] = useState('');
-  const [order, setOrder] = useState('');
+  // const [order, setOrder] = useState('');
   const [pokemon, setPokemon] = useState('');
   const [displayDetail, setDisplayDetail] = useState('');
   const [lightStatus, setLightStatus] = useState('');
@@ -35,7 +35,7 @@ export default function Home() {
   useEffect(() =>{
     let offset = (pageNumber*20)-20;
     getAllPokemonsPerPage(offset);
-    setOrder('');
+    // setOrder('');
   },[pageNumber])
   useEffect(() => {
     function loading () {
@@ -50,10 +50,10 @@ export default function Home() {
     setDataStatusTwo('disactiveTwo');
     loading();
   },[pokemons])
-  useEffect(()=>{
-    let data = [...pokemons]
-    orderPokemonsBy(data, order);
-  }, [order, pokemons]);
+  // useEffect(()=>{
+  //   let data = [...pokemons]
+  //   orderPokemonsBy(data, order);
+  // }, [order, pokemons]);
   useEffect(()=>{
     if(pokemon !== '') getPokemon(pokemon);
   }, [pokemon]);
@@ -75,7 +75,7 @@ export default function Home() {
       <Loading dataStatus={dataStatus} />
       <div className={'homepage'}>
         <FilterTypes filterActived={filterActived} setFilterActived={setFilterActived} />
-        <OrderPokemons orderActived={orderActived} setOrder={setOrder} order={order} />
+        <OrderPokemons orderActived={orderActived} data={data} />
         <div className="control-btns">
           <LightBulbs status={lightStatus}/>
           <DirectionArrow />

@@ -1,7 +1,11 @@
+import { useState } from "react";
+import { orderPokemonsBy } from "../../services/pokemonServices";
 import "./OrderPokemons.scss";
-export default function OrderPokemons({orderActived, setOrder, order}) {
+export default function OrderPokemons({orderActived, data}) {
+  const [order, setOrder] = useState('');
   function selectOrderHandle(type: string){
     setOrder(type)
+    orderPokemonsBy(data, type);
   }  
   return (
     <div className={`order-modal ${orderActived}`}>
