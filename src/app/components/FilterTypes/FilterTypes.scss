@@ -56,12 +56,20 @@
       }
     }
     .actived-filter-item{
-      @extend .filter-item;
+      // @extend .filter-item;
       background-color: palegoldenrod;
-      transform: scale(1.03);
+      // transform: scale(1.03);
       box-shadow: 0 0 10px black;
     }
   }
+}
+.cursor-pointer {
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.actived-filter-item{
+  background-color: palegoldenrod;
+  box-shadow: 0 0 10px black;
 }
 .filter-modal-footer{
   display: flex;

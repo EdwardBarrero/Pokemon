@@ -15,15 +15,15 @@ export default function PokemonDetail({setDisplayDetail, setLightStatus, setPoke
     <>
     { Object.keys(pokemon).length > 0 &&
       <div className="pokemon-detail-container">
-        <img onClick={goBackHandle} className="back-arrow" src={UTILITIES.backArrow} alt="" />
-        <img className="pokemon-detail-img" src={pokemon['sprites']['front_default']} alt="" />
+        <img onClick={goBackHandle} className="back-arrow" src={UTILITIES.backArrow} alt="" loading="lazy"/>
+        <img className="pokemon-detail-img" src={pokemon['sprites']['front_default']} alt="" loading="lazy"/>
         <section className="pokemon-info">
           <p className="pokemon-detail-name">{pokemon['name'].toUpperCase()}</p>
           <div className="pokemon-detail-types">
             {
               pokemon['types'].map((type:any) => (
                 <div key={type.type.name} className="li-pokemon-type">
-                  <img className="pokemon-type-icon" src={TYPES[type.type.name]} alt="" />
+                  <img className="pokemon-type-icon" src={TYPES[type.type.name]} alt="" loading="lazy"/>
                   <p className="pokemon-type-text" >{DICTIONARY[type.type.name].toUpperCase()}</p>
                 </div>
               ))
@@ -31,15 +31,15 @@ export default function PokemonDetail({setDisplayDetail, setLightStatus, setPoke
           </div>
           <div className="pokemon-detail-stats">
             <div className="pokemon-info-stat-hp">
-              <img className='stat-hp-icon' src={STATS.hp} alt="" />
+              <img className='stat-hp-icon' src={STATS.hp} alt="" loading="lazy"/>
               <p className="stat-hp-number">{pokemon['stats'][0].base_stat}</p>
             </div>
             <div className="pokemon-info-stat-attack">
-              <img className="stat-attack-icon" src={STATS.attack} alt="" />
+              <img className="stat-attack-icon" src={STATS.attack} alt="" loading="lazy"/>
               <p className="stat-attack-number">{pokemon['stats'][1].base_stat}</p>
             </div>
             <div className="pokemon-info-stat-defense">
-              <img className="stat-defense-icon" src={STATS.defense} alt="" />
+              <img className="stat-defense-icon" src={STATS.defense} alt="" loading="lazy"/>
               <p className="stat-defense-number">{pokemon['stats'][2].base_stat}</p>
             </div>
           </div>

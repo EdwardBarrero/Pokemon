@@ -40,13 +40,13 @@ export default function FilterTypes ({filterActived, setFilterActived}: Props) {
           <div className="row w-100 mx-auto">
           {
             pokemonTypes?.map((type) => (
-              <div className="col-12 col-md-4  col-sm-6">
+              <div className="col-12 col-md-4  col-sm-6" key={type['name']}>
                 <div
                   key={type['name']}
                   onClick={() => addFilterItemHandle(type['name'])}
-                  className="text-center border my-1 d-flex flex-column align-items-center justify-content-center py-2 border-dark rounded cursor-pointer"
+                  className={`text-center border my-1 d-flex flex-column align-items-center justify-content-center py-2 border-dark rounded cursor-pointer ${filter === type['name'] ? 'actived-filter-item' : ''}`}
                   >
-                  <img width={'50'} src={TYPES[type['name']]} alt="" />
+                  <img width={'50'} src={TYPES[type['name']]} alt="" loading="lazy"/>
                   <span>{DICTIONARY[type['name']]}</span>
                 </div>
               </div>
