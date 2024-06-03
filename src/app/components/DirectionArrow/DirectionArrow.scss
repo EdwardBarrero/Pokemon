@@ -2,6 +2,9 @@
   position: absolute;
   left: calc(10% - 6em);
   top: calc(50% - 6em);
+  @media (width < 1000px) {
+    display: none;
+  };
   .direction-arrow-background{
     position: absolute;
     width: 12em;

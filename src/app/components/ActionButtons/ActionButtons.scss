@@ -2,6 +2,9 @@
     position: absolute;
     left: calc(90% - 6em);
     top: calc(50% - 6em);
+    @media (width < 1000px) {
+      display: none;
+    };
     .action-btn-background{
       width: 12em;
       height: 12em;

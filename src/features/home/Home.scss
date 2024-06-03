@@ -23,7 +23,12 @@
   box-shadow: inset 0px 0px 8px black, 0 0 60px white;
   scrollbar-width: thin;
   scrollbar-color: gray lightgray;
-}
+  @media (width < 1000px) {
+    width: auto;
+    margin: 0 20px;
+    left: 0;
+  }
+ }
 .container-home{
   transition: all ease 0.5s;
   .homepage{
@@ -44,8 +49,9 @@
     }
     .pokemon-detail{
       @extend .screen;
-      position: absolute;
-      z-index: 0;
+      position: relative;
+      // position: absolute;
+      // z-index: 0;
     }
     .pokemon-cards::-webkit-scrollbar{
       width: 10px;

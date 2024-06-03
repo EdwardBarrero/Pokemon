@@ -1,19 +1,42 @@
 import { useState } from "react";
 import { orderPokemonsBy } from "../../services/pokemonServices";
+import { Modal } from "react-bootstrap";
+import { ORDER_OPTIONS } from "./helpers";
 import "./OrderPokemons.scss";
-export default function OrderPokemons({orderActived, data}) {
+
+interface Props {
+  orderActived: boolean;
+  data: any[];
+  onHide: () => void;
+}
+
+export default function OrderPokemons({orderActived, data, onHide}: Props) {
   const [order, setOrder] = useState('');
   function selectOrderHandle(type: string){
     setOrder(type)
     orderPokemonsBy(data, type);
+    onHide();
   }  
   return (
-    <div className={`order-modal ${orderActived}`}>
-      <button onClick={()=>selectOrderHandle('az')} className={order !== 'az' ? "order-modal-btn-az" : 'order-btn-on'}>A - Z</button>
-      <button onClick={()=>selectOrderHandle('za')} className={order !== 'za' ? "order-modal-btn-za" : 'order-btn-on'}>Z - A</button>
-      <button onClick={()=>selectOrderHandle('hp')} className={order !== 'hp' ? "order-modal-btn-hp" : 'order-btn-on'}>HP</button>
-      <button onClick={()=>selectOrderHandle('atk')} className={order !== 'atk' ? "order-modal-btn-atk" : 'order-btn-on'}>ATQ</button>
-      <button onClick={()=>selectOrderHandle('def')} className={order !== 'def' ? "order-modal-btn-def" : 'order-btn-on'}>DEF</button>
-    </div>
+    <Modal
+      show={orderActived}
+      onHide={onHide}
+      centered
+      size="sm"
+    >
+      <div className="card bg-light">
+        <section className="card-body row align-items-center justify-content-center">
+          {ORDER_OPTIONS.map((option) => 
+            <button
+              key={`order-option-${option.orderType}`}
+              onClick={() => selectOrderHandle(option.orderType)}
+              className={'col-6 col-md-4 m-1 order-btns' + (option.orderType === order ? ' order-btn-on' : '')}
+            >
+              {option.label}
+            </button>
+          )}
+        </section>
+      </div>
+    </Modal>
   )
 }

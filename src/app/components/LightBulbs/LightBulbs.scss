@@ -2,6 +2,9 @@
   position: absolute;
   left: calc(10% - 4.5em);
   top: 5%;
+  @media (width < 1000px) {
+    display: none;
+  };
   .actived-light-bulbs{
     display: block !important;
   }

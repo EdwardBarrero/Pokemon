@@ -1,11 +1,18 @@
 import "./ActionButtons.scss";
 
-export default function ActionButtons({setFilterActived, filterActived, orderActived, setOrderActived}) {
+interface Props {
+  setFilterActived: (value: boolean) => void;
+  filterActived: boolean;
+  orderActived: boolean;
+  setOrderActived: (value: boolean) => void;
+}
+
+export default function ActionButtons({setFilterActived, filterActived, orderActived, setOrderActived}: Props) {
   function setFilterStatusHandle() {
-    filterActived !== '' ? setFilterActived('') : setFilterActived('filter-modal-actived');
+    setFilterActived(!filterActived);
   }
   function setOrderStatusHandle(){
-    orderActived !== '' ? setOrderActived('') : setOrderActived('order-modal-actived');
+    setOrderActived(!orderActived);
   }
   
   return (

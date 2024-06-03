@@ -5,13 +5,13 @@
   border: 1px solid;
   margin: auto 5px;
   cursor: pointer;
-  background-color: white;
+  background-color: rgb(233, 233, 218);
   transition: all ease 0.5s;
 }
 .order-btn-on{
   @extend .order-btns;
   background-color: lightgray;
-  transform: scale(1.2);
+  // transform: scale(1.2);
   box-shadow: 0 0 5px black;
 }
 .order-modal-actived{
@@ -20,13 +20,16 @@
   left: calc(90% - 6em) !important;
 }
 .order-modal{
+  @media (width < 500px) {
+    display: none;
+  };
   position: absolute;
   display: flex;
   flex-wrap: wrap;
   left: calc(90% - 6em);
   bottom: 100%;
   z-index: 5;
-  width: 12em;
+  max-width: 12em;
   height: 6em;
   background-color: #C42A2A;
   border: 1px solid black;

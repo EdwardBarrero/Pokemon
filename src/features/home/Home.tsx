@@ -20,9 +20,8 @@ export default function Home() {
   const [dataStatusTwo, setDataStatusTwo] = useState('disactiveTwo');
   const [pageNumber, setPageNumber] = useState(1);
   const [animationState, setAnimationState] = useState('on-animation-home');
-  const [filterActived, setFilterActived] = useState('');
-  const [orderActived, setOrderActived] = useState('');
-  // const [order, setOrder] = useState('');
+  const [filterActived, setFilterActived] = useState<boolean>(false);
+  const [orderActived, setOrderActived] = useState<boolean>(false);
   const [pokemon, setPokemon] = useState('');
   const [displayDetail, setDisplayDetail] = useState('');
   const [lightStatus, setLightStatus] = useState('');
@@ -50,10 +49,7 @@ export default function Home() {
     setDataStatusTwo('disactiveTwo');
     loading();
   },[pokemons])
-  // useEffect(()=>{
-  //   let data = [...pokemons]
-  //   orderPokemonsBy(data, order);
-  // }, [order, pokemons]);
+
   useEffect(()=>{
     if(pokemon !== '') getPokemon(pokemon);
   }, [pokemon]);
@@ -75,25 +71,28 @@ export default function Home() {
       <Loading dataStatus={dataStatus} />
       <div className={'homepage'}>
         <FilterTypes filterActived={filterActived} setFilterActived={setFilterActived} />
-        <OrderPokemons orderActived={orderActived} data={data} />
+        <OrderPokemons orderActived={orderActived} data={data} onHide={() => setOrderActived(false)}/>
         <div className="control-btns">
           <LightBulbs status={lightStatus}/>
           <DirectionArrow />
           <ActionButtons orderActived={orderActived} setOrderActived={setOrderActived} filterActived={filterActived} setFilterActived={setFilterActived} />
           <PaginationButtons pageNumber={pageNumber} setPageNumber={setPageNumber}/>
         </div>
-        <div className={`pokemon-detail ${displayDetail}`}>
-          <PokemonDetail setDisplayDetail={setDisplayDetail} setLightStatus={setLightStatus} setPokemon={setPokemon}/>
-        </div>
-        <div className={`pokemon-cards`}>
-        {
-          data.map((pokemon) => (
-            <div key={pokemon.id} onClick={()=>pokemonSelectedHandle(pokemon.id)} className={`pokemon-card-home ${dataStatusTwo}`}>
-              <PokemonCard data={pokemon} />
-            </div>
-          ))
-        }
-        </div>
+        {displayDetail ? (
+          <div className={`pokemon-detail ${displayDetail}`}>
+            <PokemonDetail setDisplayDetail={setDisplayDetail} setLightStatus={setLightStatus} setPokemon={setPokemon}/>
+          </div>
+        ) : (
+          <div className={`pokemon-cards`}>
+          {
+            data.map((pokemon) => (
+              <div key={pokemon.id} onClick={()=>pokemonSelectedHandle(pokemon.id)} className={`pokemon-card-home ${dataStatusTwo}`}>
+                <PokemonCard data={pokemon} />
+              </div>
+            ))
+          }
+          </div>
+        )}
       </div>
     </div>
   )

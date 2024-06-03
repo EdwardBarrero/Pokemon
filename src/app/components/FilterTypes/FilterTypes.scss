@@ -4,6 +4,9 @@
 }
 
 .filter-modal{
+  @media (width < 500px) {
+    display: none;
+  };
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -59,25 +62,25 @@
       box-shadow: 0 0 10px black;
     }
   }
-  .filter-modal-footer{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    margin-top: 25px;
-    .filter-modal-btn{
-      width: 150px;
-      height: 30px;
-      color: white;
-      font-family: 'Roboto Mono', monospace;
-      cursor: pointer;
-    }
-    .filter-modal-trigger{
-      @extend .filter-modal-btn;
-      background-color: darkcyan;
-    }
-    .filter-modal-cancel{
-      @extend .filter-modal-btn;
-      background-color: grey;
-    }
+}
+.filter-modal-footer{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 25px;
+  .filter-modal-btn{
+    width: 150px;
+    height: 30px;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    cursor: pointer;
+  }
+  .filter-modal-trigger{
+    @extend .filter-modal-btn;
+    background-color: darkcyan;
+  }
+  .filter-modal-cancel{
+    @extend .filter-modal-btn;
+    background-color: grey;
   }
 }
