@@ -86,6 +86,9 @@
     transform: scale(0.5);
     opacity: 0;
   }
+  @media (width < 720px) {
+    display: none;
+  }
 }
 .pikachu{
   cursor: default;
@@ -125,6 +128,9 @@
     transform: scale(0.5);
     opacity: 0;
   }
+  @media (width < 720px) {
+    display: none;
+  }
 }
 .squirtle{
   cursor: default;
@@ -163,6 +169,9 @@
   &:hover .imagen-squirtle{
     transform: scale(0.5);
     opacity: 0;
+  }
+  @media (width < 720px) {
+    display: none;
   }
 }
 .charmander{
@@ -205,6 +214,9 @@
     transform: scale(0.5);
     opacity: 0;
   }
+  @media (width < 720px) {
+    display: none;
+  }
 }
 .ash{
   .imagen-ash{
@@ -231,6 +243,9 @@
   }
   &:hover .imagen-ash-lanzando{
     opacity: 0.8;
+  }
+  @media (width < 720px) {
+    display: none;
   }
 }
 .pokemon{
